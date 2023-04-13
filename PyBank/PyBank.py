@@ -10,9 +10,6 @@ if not os.path.exists(os.path.join("PyBank","Output")): # check to see if dir ex
     os.mkdir(os.path.join('PyBank','Output'))
 pybank_out_path=os.path.join(os.getcwd(),'PyBank','Output','Pybank_calcs.txt')
 
-print(pybank_path)
-print(pybank_out_path)
-
 #Initialize variables
 months=0
 total=0
@@ -20,7 +17,6 @@ profit_change=[]
 month_change=[]   
 largest_increase=["",0] #Help from class info
 largest_decrease=["",9999999999999999999999] #Help from class info  
-#change=0
 
 #open original data as read only file
 with open(pybank_path,'r') as pybank_in:
@@ -57,6 +53,8 @@ with open(pybank_path,'r') as pybank_in:
 
 ave_change=sum(profit_change)/len(profit_change)
 
+
+#Generate txt file format
 summary =(
         f"Financial Analysis\n"
         f"-------------------------------\n"
@@ -67,6 +65,7 @@ summary =(
         f"Greastest Decrease in Profits: {largest_decrease[0]} (${largest_decrease[1]})\n"
 )
 
+#provide sresults in terminal window
 print(summary)
 
 #write txt file
