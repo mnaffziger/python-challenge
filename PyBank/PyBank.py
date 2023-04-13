@@ -52,7 +52,8 @@ with open(pybank_path,'r') as pybank_in:
              largest_decrease[1]=change
 
 ave_change=sum(profit_change)/len(profit_change)
-
+ #format averate for 2 decimal places
+ave_change_format="{:.2f}".format(ave_change)
 
 #Generate txt file format
 summary =(
@@ -60,7 +61,7 @@ summary =(
         f"-------------------------------\n"
         f"Total Months: {months}\n"
         f"Total: ${total}\n"
-        f"Average Change: ${ave_change}\n"
+        f"Average Change: ${ave_change_format}\n"
         f"Greatest Increase in Profits: {largest_increase[0]} (${largest_increase[1]})\n"
         f"Greastest Decrease in Profits: {largest_decrease[0]} (${largest_decrease[1]})\n"
 )
